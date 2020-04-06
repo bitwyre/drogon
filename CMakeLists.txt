@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.5)
 
 project(drogon)
+include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+conan_basic_setup()
 
 message(STATUS "compiler: " ${CMAKE_CXX_COMPILER_ID})
 include(CheckCXXSourceRuns)
