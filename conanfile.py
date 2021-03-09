@@ -19,7 +19,7 @@ class DrogonConan(ConanFile):
     requires = [
         "Jsoncpp/1.9.2@bitwyre/stable",
         "openssl/1.1.1j@bitwyre/stable",
-        "ZLib/1.2.11@bitwyre/stable"
+        "zlib/1.2.11@bitwyre/stable"
     ]
     generators = "cmake"
     exports_sources = "*"
@@ -43,7 +43,7 @@ class DrogonConan(ConanFile):
                 self.deps_cpp_info["libuuid"].rootpath
         cmake.definitions['LIBPQ_BATCH_MODE'] = True
         cmake.definitions['OPENSSL_ROOT_DIR'] = self.deps_cpp_info["openssl"].rootpath
-        cmake.definitions['ZLIB_ROOT'] = self.deps_cpp_info["ZLib"].rootpath
+        cmake.definitions['ZLIB_ROOT'] = self.deps_cpp_info["zlib"].rootpath
         cmake.configure()
         return cmake
 
